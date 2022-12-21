@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/kaue/Desktop/Projeto/src/TelaLogin/Principal.java</file>
-            <file>file:/home/kaue/Desktop/Projeto/src/TelaLogin/Login.java</file>
-            <file>file:/home/kaue/Desktop/Projeto/src/TelaLogin/GerenciarCliente.java</file>
-            <file>file:/home/kaue/Desktop/Projeto/src/TelaLogin/GerenciarFilme.java</file>
-            <file>file:/home/kaue/Desktop/Projeto/src/TelaLogin/Creditos.java</file>
+            <file>file:/home/kaue/Documentos/GitHub/cinema/Projeto/src/Cinema/TelaCreditos.java</file>
+            <file>file:/home/kaue/Documentos/GitHub/cinema/Projeto/src/Cinema/TelaPrincipal.java</file>
+            <file>file:/home/kaue/Documentos/GitHub/cinema/Projeto/src/Cinema/TelaLogin.java</file>
+            <file>file:/home/kaue/Documentos/GitHub/cinema/Projeto/src/Cinema/TelaGerenciarCliente.java</file>
+            <file>file:/home/kaue/Documentos/GitHub/cinema/Projeto/src/Cinema/TelaGerenciarFilme.java</file>
         </group>
     </open-files>
 </project-private>

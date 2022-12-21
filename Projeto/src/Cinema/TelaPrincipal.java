@@ -8,12 +8,12 @@ package Cinema;
  *
  * @author GAMER
  */
-public class Principal extends javax.swing.JFrame {
+public class TelaPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form form
      */
-    public Principal() {
+    public TelaPrincipal() {
         initComponents();
         
         this.setLocationRelativeTo(null);
@@ -53,7 +53,8 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnCreditos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnCreditos.setText("Creditos");
+        btnCreditos.setText("Créditos");
+        btnCreditos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCreditos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreditosActionPerformed(evt);
@@ -101,20 +102,22 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreditosActionPerformed
-        Creditos abrir= new Creditos();
+        TelaCreditos abrir= new TelaCreditos();
+        abrir.setDefaultCloseOperation(DISPOSE_ON_CLOSE);   
         abrir.setVisible(true);
-
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCreditosActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-        GerenciarCliente cliente= new GerenciarCliente();
+        TelaGerenciarCliente cliente= new TelaGerenciarCliente();
+        cliente.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         cliente.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnFilmesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilmesActionPerformed
-        GerenciarFilme filme= new GerenciarFilme();
+        TelaGerenciarFilme filme= new TelaGerenciarFilme();
+        filme.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         filme.setVisible(true);            // TODO add your handling code here:
     }//GEN-LAST:event_btnFilmesActionPerformed
 
@@ -135,21 +138,23 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                new TelaPrincipal().setVisible(true);
             }
         });
     }

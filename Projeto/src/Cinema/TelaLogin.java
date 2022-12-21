@@ -131,7 +131,7 @@ public class TelaLogin extends javax.swing.JFrame {
          
          } else{
             if (usuario.equals("ifba") && senha.equals ("1234")){
-                Principal telainicio = new Principal();
+                TelaPrincipal telainicio = new TelaPrincipal();
                 telainicio.setVisible (true);
                 this.dispose();
             
