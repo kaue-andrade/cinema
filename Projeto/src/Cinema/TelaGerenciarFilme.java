@@ -169,45 +169,41 @@ public class TelaGerenciarFilme extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnAlterar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnExcluir))
-                            .addComponent(btnCadastrar))))
+                        .addComponent(btnAlterar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExcluir))
+                    .addComponent(btnCadastrar))
                 .addContainerGap(27, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblTituloo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblCodigo)
+                            .addComponent(lblAno)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblTituloo)
+                            .addComponent(lblGenero)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblAno)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblGenero)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtGenero))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblDuracao)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDuracao, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(lblTitulo))
+                            .addComponent(txtGenero))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblDuracao)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtDuracao, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblCodigo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTitulo)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(245, 245, 245))
         );
         layout.setVerticalGroup(
@@ -331,7 +327,7 @@ public class TelaGerenciarFilme extends javax.swing.JFrame {
 
             LimparCampos();
 
-            JOptionPane.showMessageDialog(this, "Filme cadastrado com sucesso!");
+            JOptionPane.showMessageDialog(this, "Filme cadastrado com Sucesso.");
         } else {
             JOptionPane.showMessageDialog(this, "Os campos Código, Título, Duração, Gênero e Ano são obrigatórios.");
         }
@@ -366,7 +362,7 @@ public class TelaGerenciarFilme extends javax.swing.JFrame {
 
                 LimparCampos();
                 
-                JOptionPane.showMessageDialog(this, "Filme alterado com Sucesso!");
+                JOptionPane.showMessageDialog(this, "Filme alterado com sucesso!");
                 
             } else {
                 JOptionPane.showMessageDialog(this, "Os campos Código, Título, Duração, Gênero e Ano são obrigatórios.");
@@ -388,6 +384,7 @@ public class TelaGerenciarFilme extends javax.swing.JFrame {
         } else{
             DefaultTableModel tabelaUsuarios = (DefaultTableModel) tblUsuarios.getModel();
             tabelaUsuarios.removeRow(linhaSelecionada);
+            LimparCampos();
             JOptionPane.showMessageDialog(this, "Filme excluído com sucesso!");
         }
 
