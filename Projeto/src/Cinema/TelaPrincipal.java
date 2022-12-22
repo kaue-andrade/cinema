@@ -35,6 +35,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("IFBA - Sistema de Locação de Filmes");
+        setResizable(false);
 
         btnClientes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnClientes.setText("Gerenciar Clientes");
