@@ -4,6 +4,9 @@
  */
 package Cinema;
 
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author GAMER
@@ -28,24 +31,385 @@ public class TelaGerenciarFilme extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitulo = new javax.swing.JLabel();
+        lblTituloo = new javax.swing.JLabel();
+        txtAno = new javax.swing.JTextField();
+        lblDuracao = new javax.swing.JLabel();
+        lblGenero = new javax.swing.JLabel();
+        lblAno = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        txtDuracao = new javax.swing.JTextField();
+        txtTitulo = new javax.swing.JTextField();
+        lblCodigo = new javax.swing.JLabel();
+        txtGenero = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblUsuarios = new javax.swing.JTable();
+        btnCadastrar = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("IFBA - Sistema de Locação de Filmes");
         setResizable(false);
+
+        lblTitulo.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        lblTitulo.setText("Gerenciar Filmes");
+
+        lblTituloo.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        lblTituloo.setText("Título:");
+
+        txtAno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAnoActionPerformed(evt);
+            }
+        });
+
+        lblDuracao.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        lblDuracao.setText("Duração:");
+
+        lblGenero.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        lblGenero.setText("Gênero:");
+
+        lblAno.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        lblAno.setText("Ano:");
+
+        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoActionPerformed(evt);
+            }
+        });
+        txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigoKeyTyped(evt);
+            }
+        });
+
+        txtDuracao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDuracaoActionPerformed(evt);
+            }
+        });
+
+        txtTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTituloActionPerformed(evt);
+            }
+        });
+        txtTitulo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTituloKeyTyped(evt);
+            }
+        });
+
+        lblCodigo.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        lblCodigo.setText("Código:");
+
+        txtGenero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtGeneroActionPerformed(evt);
+            }
+        });
+        txtGenero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtGeneroKeyTyped(evt);
+            }
+        });
+
+        tblUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "CÓDIGO", "TÍTULO", "DURAÇÃO", "GÊNERO", "ANO"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblUsuarios.setRowHeight(30);
+        tblUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblUsuariosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblUsuarios);
+
+        btnCadastrar.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
+
+        btnAlterar.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        btnAlterar.setText("Alterar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
+
+        btnExcluir.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnAlterar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnExcluir))
+                            .addComponent(btnCadastrar))))
+                .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblCodigo)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblTituloo)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblAno)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblGenero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtGenero))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblDuracao)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtDuracao, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(lblTitulo))
+                .addGap(245, 245, 245))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lblTitulo)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCodigo)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblTituloo)
+                    .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDuracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDuracao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblGenero)
+                    .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAno)
+                    .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(btnCadastrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAlterar)
+                    .addComponent(btnExcluir))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAnoActionPerformed
+
+    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoActionPerformed
+
+    private void txtCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyTyped
+        // TODO add your handling code here:
+
+        PermitirDigitarSomenteNumeros(evt);
+    }//GEN-LAST:event_txtCodigoKeyTyped
+
+    private void txtDuracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDuracaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDuracaoActionPerformed
+
+    private void txtTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTituloActionPerformed
+
+    private void txtTituloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTituloKeyTyped
+        // TODO add your handling code here:
+
+        PermitirDigitarSomenteLetrasEEspaco(evt);
+    }//GEN-LAST:event_txtTituloKeyTyped
+
+    private void txtGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGeneroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGeneroActionPerformed
+
+    private void txtGeneroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGeneroKeyTyped
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtGeneroKeyTyped
+
+    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
+        int linhaSelecionada = tblUsuarios.getSelectedRow();
+
+        if(linhaSelecionada != -1){
+            String codigo = tblUsuarios.getValueAt(linhaSelecionada, 0).toString();
+            txtCodigo.setText(codigo);
+
+            String nome = tblUsuarios.getValueAt(linhaSelecionada, 1).toString();
+            txtTitulo.setText(nome);
+
+            String duracao = tblUsuarios.getValueAt(linhaSelecionada, 2).toString();
+            txtDuracao.setText(duracao);
+
+            String genero = tblUsuarios.getValueAt(linhaSelecionada, 3).toString();
+            txtGenero.setText(genero);
+
+            String ano = tblUsuarios.getValueAt(linhaSelecionada, 4).toString();
+            txtAno.setText(ano);
+        }
+    }//GEN-LAST:event_tblUsuariosMouseClicked
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // TODO add your handling code here:
+
+        String codigo = txtCodigo.getText();
+        String titulo = txtTitulo.getText();
+        String duracao = txtDuracao.getText();
+        String genero = txtGenero.getText();
+        String ano = txtAno.getText();
+
+        if(!codigo.equals("") && !titulo.equals("") && !duracao.equals("") && !genero.equals("") && !ano.equals("")){
+            DefaultTableModel tabelaUsuarios = (DefaultTableModel) tblUsuarios.getModel();
+
+            Object[] Usuario = new Object[]{
+                codigo,
+                titulo,
+                duracao,
+                genero, 
+                ano,
+            };
+
+            tabelaUsuarios.addRow(Usuario);
+
+            LimparCampos();
+
+            JOptionPane.showMessageDialog(this, "Filme cadastrado com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Os campos Código, Título, Duração, Gênero e Ano são obrigatórios.");
+        }
+    }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    private void LimparCampos(){
+        txtCodigo.setText("");
+        txtTitulo.setText("");
+        txtDuracao.setText("");
+        txtGenero.setText("");
+        txtAno.setText("");
+    }
+    
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        // TODO add your handling code here:
+
+        int linhaSelecionada = tblUsuarios.getSelectedRow();
+
+        if(linhaSelecionada != -1){
+            String codigo = txtCodigo.getText();
+            String titulo = txtTitulo.getText();
+            String duracao = txtDuracao.getText();
+            String genero = txtGenero.getText();
+            String ano = txtAno.getText();
+
+            if(!codigo.equals("") && !titulo.equals("") && !duracao.equals("") && !genero.equals("") && !ano.equals("")){
+                tblUsuarios.setValueAt(codigo, linhaSelecionada, 0);
+                tblUsuarios.setValueAt(titulo, linhaSelecionada, 1);
+                tblUsuarios.setValueAt(duracao, linhaSelecionada, 2);
+                tblUsuarios.setValueAt(genero, linhaSelecionada, 3);
+                tblUsuarios.setValueAt(ano, linhaSelecionada, 4);
+
+                LimparCampos();
+                
+                JOptionPane.showMessageDialog(this, "Filme alterado com Sucesso!");
+                
+            } else {
+                JOptionPane.showMessageDialog(this, "Os campos Código, Título, Duração, Gênero e Ano são obrigatórios.");
+            }
+        }
+
+        else {
+            JOptionPane.showMessageDialog(this, "Selecione uma linha para alteração.");
+        }
+    }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+
+        int linhaSelecionada = tblUsuarios.getSelectedRow();
+
+        if(linhaSelecionada == -1){
+            JOptionPane.showMessageDialog(this, "Selecione uma linha para exclusão.");
+        } else{
+            DefaultTableModel tabelaUsuarios = (DefaultTableModel) tblUsuarios.getModel();
+            tabelaUsuarios.removeRow(linhaSelecionada);
+            JOptionPane.showMessageDialog(this, "Filme excluído com sucesso!");
+        }
+
+        LimparCampos();
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void PermitirDigitarSomenteNumeros(java.awt.event.KeyEvent evt){
+        char c = evt.getKeyChar();
+        
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }
+    
+    private void PermitirDigitarSomenteLetrasEEspaco(java.awt.event.KeyEvent evt){
+        char c = evt.getKeyChar();
+        
+        if(!Character.isAlphabetic(c) && c != ' '){
+            evt.consume();
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -83,5 +447,21 @@ public class TelaGerenciarFilme extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnExcluir;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAno;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblDuracao;
+    private javax.swing.JLabel lblGenero;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTituloo;
+    private javax.swing.JTable tblUsuarios;
+    private javax.swing.JTextField txtAno;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtDuracao;
+    private javax.swing.JTextField txtGenero;
+    private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 }
