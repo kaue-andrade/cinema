@@ -15,6 +15,8 @@ public class TelaGerenciarFilme extends javax.swing.JFrame {
      */
     public TelaGerenciarFilme() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);  
     }
 
     /**
