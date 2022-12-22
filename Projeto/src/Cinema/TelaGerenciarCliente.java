@@ -50,8 +50,9 @@ public class TelaGerenciarCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("IFBA - Sistema de Locação de Filmes");
+        setResizable(false);
 
-        lblTitulo.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         lblTitulo.setText("Gerenciar Clientes");
 
         lblCodigo.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
