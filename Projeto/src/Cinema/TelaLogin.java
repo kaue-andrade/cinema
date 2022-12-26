@@ -5,6 +5,7 @@
 package Cinema;
 
 import javax.swing.JOptionPane;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -66,6 +67,11 @@ public class TelaLogin extends javax.swing.JFrame {
                 txpSenhaActionPerformed(evt);
             }
         });
+        txpSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txpSenhaKeyPressed(evt);
+            }
+        });
 
         btnLimpar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnLimpar.setText("Limpar");
@@ -94,7 +100,7 @@ public class TelaLogin extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblSenha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txpSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(61, 61, 61)
@@ -154,6 +160,14 @@ public class TelaLogin extends javax.swing.JFrame {
     private void txpSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txpSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txpSenhaActionPerformed
+
+    private void txpSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txpSenhaKeyPressed
+        // TODO add your handling code here:
+        
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            btnEntrarActionPerformed(null);
+        }
+    }//GEN-LAST:event_txpSenhaKeyPressed
 
     /**
      * @param args the command line arguments
